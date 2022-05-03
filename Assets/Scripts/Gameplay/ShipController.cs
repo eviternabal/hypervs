@@ -6,14 +6,16 @@ namespace NAMESPACENAME.Gameplay.Ship
     { 
         [Header("Set Values")]
         [SerializeField] float XYspeed;
+        [SerializeField] float forwardSpeed;
         [Header("Runtime Values")]
-        [SerializeField] Vector2 moveInput;
+        [SerializeField] Vector3 moveInput;
         [SerializeField] Vector2 moveInputTEMP;
 
         //Unity Events
         private void Update()
         {
             moveInput = moveInputTEMP;
+            moveInput.z = forwardSpeed;
 
             if (moveInput.magnitude > 0)
             {
