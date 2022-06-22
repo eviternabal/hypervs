@@ -10,22 +10,39 @@ namespace NAMESPACENAME.Gameplay.Ship
         [Header("Runtime Values")]
         [SerializeField] Vector3 moveInput;
 
+        public System.Action ShipMoved;
+        public System.Action ShipAdvanced;
+
         //Unity Events
         private void Update()
         {
-            moveInput.z = forwardSpeed;
+            MoveForward();
 
             if (moveInput.magnitude > 0)
             {
-                Move();
+                MoveSides();
             }
         }
 
         //Methods
-        void Move()
+        void MoveForward()
         {
+            //Move
+            transform.Translate(transform.forward * forwardSpeed * Time.deltaTime);
+
+            //Send Event
+            ShipAdvanced?.Invoke();
+        }
+        void MoveSides()
+        {
+            //Move
             transform.Translate(moveInput * Time.deltaTime);
+            
+            //Reset input
             moveInput = Vector2.zero;
+
+            //Send event
+            ShipMoved();
         }
         public void GetInputX(float input)
         {

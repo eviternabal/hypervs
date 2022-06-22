@@ -5,7 +5,6 @@ namespace NAMESPACENAME.Gameplay.Ship
     public class InputReceiver : MonoBehaviour
     {
         [Header("Set Values")]
-        //[SerializeField] Joystick joystick;
         [SerializeField] ShipController ship;
         [SerializeField] Vector2 screenCenterOffset;
         [SerializeField] bool useDefaultOffset;
@@ -35,7 +34,7 @@ namespace NAMESPACENAME.Gameplay.Ship
         void GetTouch()
         {
             bool touchThisFrame;
-            touchThisFrame = usingTouch ? Input.touchCount > 0 : Input.GetMouseButtonDown(0);
+            touchThisFrame = usingTouch ? Input.touchCount > 0 : Input.GetMouseButton(0);
 
             if (touchThisFrame)
             {
@@ -50,6 +49,10 @@ namespace NAMESPACENAME.Gameplay.Ship
 
                 //Apply to world coordinates
                 input = (Vector2)Camera.main.ScreenToWorldPoint(touchPos) - screenCenterOffset;
+            }
+            else
+            {
+                input *= 0;
             }
         }
     }
