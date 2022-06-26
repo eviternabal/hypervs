@@ -904,7 +904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4563042777394416, guid: 79035093c9587c246b3bb29ffc5838a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4563042777394416, guid: 79035093c9587c246b3bb29ffc5838a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -973,6 +973,8 @@ MonoBehaviour:
   forwardSpeed: 100
   moveInput: {x: 0, y: 0, z: 0}
   moveInputTEMP: {x: 0, y: 0}
+  timeToDecrementForward: 20
+  decrementForwardValue: 5
 --- !u!54 &8059223952414387372
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -10,6 +10,10 @@ namespace NAMESPACENAME.Gameplay.Ship
         [Header("Runtime Values")]
         [SerializeField] Vector3 moveInput;
         [SerializeField] Vector2 moveInputTEMP;
+        [SerializeField] private float timeToDecrementForward;
+        [SerializeField] private float decrementForwardValue;
+
+        private float timerDecrementForward;
 
         //Unity Events
 
@@ -25,6 +29,14 @@ namespace NAMESPACENAME.Gameplay.Ship
 
         private void Update()
         {
+            if (timerDecrementForward < timeToDecrementForward)
+                timerDecrementForward += Time.deltaTime;
+            else
+            {
+                forwardSpeed -= decrementForwardValue;
+                timerDecrementForward = 0.0f;
+            }
+
             moveInput = moveInputTEMP;
             moveInput.z = forwardSpeed;
 
