@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earnValue: 10
+  earnSpeed: 10
 --- !u!64 &806247508
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -540,6 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earnValue: 10
+  earnSpeed: 10
 --- !u!135 &1055673428
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -600,6 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earnValue: 10
+  earnSpeed: 20
 --- !u!64 &1140038515
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -967,7 +970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XYspeed: 5
-  forwardSpeed: 10
+  forwardSpeed: 100
   moveInput: {x: 0, y: 0, z: 0}
   moveInputTEMP: {x: 0, y: 0}
 --- !u!54 &8059223952414387372

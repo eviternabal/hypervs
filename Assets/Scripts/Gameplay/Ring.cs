@@ -6,8 +6,10 @@ using System;
 public class Ring : MonoBehaviour
 {
     [SerializeField] private int earnValue;
+    [SerializeField] private float earnSpeed;
 
     static public Action<int> CollidesWithRing;
+    static public Action<float> IncrementSpeed;
     void Start()
     {
 
@@ -23,6 +25,8 @@ public class Ring : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             CollidesWithRing?.Invoke(earnValue);
+            Debug.Log("Suma velocidad");
+            IncrementSpeed?.Invoke(earnSpeed);
         }
     }
 }

@@ -12,6 +12,17 @@ namespace NAMESPACENAME.Gameplay.Ship
         [SerializeField] Vector2 moveInputTEMP;
 
         //Unity Events
+
+        private void Start()
+        {
+            Ring.IncrementSpeed += IncrementForwardSpeed;
+        }
+
+        private void OnDisable()
+        {
+            Ring.IncrementSpeed -= IncrementForwardSpeed;
+        }
+
         private void Update()
         {
             moveInput = moveInputTEMP;
@@ -36,6 +47,11 @@ namespace NAMESPACENAME.Gameplay.Ship
         public void GetInputY(float input)
         {
             moveInputTEMP.y = input;
+        }
+
+        public void IncrementForwardSpeed(float value)
+        {
+            forwardSpeed += value;
         }
     }
 }
