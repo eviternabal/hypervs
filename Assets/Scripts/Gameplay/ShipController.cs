@@ -5,65 +5,52 @@ namespace NAMESPACENAME.Gameplay.Ship
     public class ShipController : MonoBehaviour
     { 
         [Header("Set Values")]
-        [SerializeField] float XYspeed;
+        [SerializeField] float XYSpeed;
         [SerializeField] float forwardSpeed;
         [Header("Runtime Values")]
         [SerializeField] Vector3 moveInput;
-        [SerializeField] Vector2 moveInputTEMP;
-        [SerializeField] private float timeToDecrementForward;
-        [SerializeField] private float decrementForwardValue;
 
-        private float timerDecrementForward;
+        public System.Action ShipMoved;
+        public System.Action ShipAdvanced;
 
         //Unity Events
-
-        private void Start()
-        {
-            Ring.IncrementSpeed += IncrementForwardSpeed;
-        }
-
-        private void OnDisable()
-        {
-            Ring.IncrementSpeed -= IncrementForwardSpeed;
-        }
-
         private void Update()
         {
-            if (timerDecrementForward < timeToDecrementForward)
-                timerDecrementForward += Time.deltaTime;
-            else
-            {
-                forwardSpeed -= decrementForwardValue;
-                timerDecrementForward = 0.0f;
-            }
-
-            moveInput = moveInputTEMP;
-            moveInput.z = forwardSpeed;
+            MoveForward();
 
             if (moveInput.magnitude > 0)
             {
-                Move();
+                MoveSides();
             }
         }
 
         //Methods
-        void Move()
+        void MoveForward()
         {
-            transform.Translate(moveInput.normalized * XYspeed * Time.deltaTime);
+            //Move
+            transform.Translate(transform.forward * forwardSpeed * Time.deltaTime);
+
+            //Send Event
+            ShipAdvanced?.Invoke();
+        }
+        void MoveSides()
+        {
+            //Move
+            transform.Translate(moveInput * Time.deltaTime);
+            
+            //Reset input
             moveInput = Vector2.zero;
+
+            //Send event
+            ShipMoved();
         }
         public void GetInputX(float input)
         {
-            moveInputTEMP.x = input;
+            moveInput.x = input * XYSpeed;
         }
         public void GetInputY(float input)
         {
-            moveInputTEMP.y = input;
-        }
-
-        public void IncrementForwardSpeed(float value)
-        {
-            forwardSpeed += value;
+            moveInput.y = input * XYSpeed;
         }
     }
 }

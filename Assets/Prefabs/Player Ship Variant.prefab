@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1029753612667854, guid: 79035093c9587c246b3bb29ffc5838a4, type: 3}
       propertyPath: m_Name
-      value: Player Ship
+      value: Player Ship Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1029753612667854, guid: 79035093c9587c246b3bb29ffc5838a4, type: 3}
       propertyPath: m_TagString
@@ -86,7 +86,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97f93a9d5dd3bb4f9fc10cf260d881c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XYspeed: 5
+  XYSpeed: 60
   forwardSpeed: 1
   moveInput: {x: 0, y: 0, z: 0}
-  moveInputTEMP: {x: 0, y: 0}
