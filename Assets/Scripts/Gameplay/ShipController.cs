@@ -9,10 +9,6 @@ namespace NAMESPACENAME.Gameplay.Ship
         [SerializeField] float forwardSpeed;
         [Header("Runtime Values")]
         [SerializeField] Vector3 moveInput;
-        [SerializeField] private float timeToDecrementForward;
-        [SerializeField] private float decrementForwardValue;
-
-        private float timerDecrementForward;
 
 
         public System.Action ShipMoved;
@@ -21,24 +17,18 @@ namespace NAMESPACENAME.Gameplay.Ship
         private void Start()
         {
             Ring.IncrementSpeed += IncrementForwardSpeed;
+            GameManager.DecrementShipSpeed += DecrementForwardSpeed;
         }
 
         private void OnDisable()
         {
             Ring.IncrementSpeed -= IncrementForwardSpeed;
+            GameManager.DecrementShipSpeed -= DecrementForwardSpeed;
         }
 
         //Unity Events
         private void Update()
         {
-            if (timerDecrementForward < timeToDecrementForward)
-                timerDecrementForward += Time.deltaTime;
-            else
-            {
-                forwardSpeed -= decrementForwardValue;
-                timerDecrementForward = 0.0f;
-            }
-
             MoveForward();
 
             if (moveInput.magnitude > 0)
@@ -76,9 +66,14 @@ namespace NAMESPACENAME.Gameplay.Ship
             moveInput.y = input * XYSpeed;
         }
 
-        public void IncrementForwardSpeed(float value)
+        private void IncrementForwardSpeed(float value)
         {
             forwardSpeed += value;
+        }
+
+        private void DecrementForwardSpeed(float value)
+        {
+            forwardSpeed -= value;
         }
     }
 }
