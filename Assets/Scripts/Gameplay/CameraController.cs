@@ -9,7 +9,8 @@ namespace NAMESPACENAME.Gameplay.Ship
         [SerializeField] Vector2 cameraLimit;
         [Header("Runtime Values")]
         [SerializeField] Vector2 originalPos;
-        [SerializeField] float distanceToPlayer;
+        [SerializeField] Vector2 originalDis;
+        [SerializeField] float zDistanceToPlayer;
 
         //Unity Events
         private void Start()
@@ -28,27 +29,75 @@ namespace NAMESPACENAME.Gameplay.Ship
                 ship.ShipAdvanced += OnShipMoved;
             }
 
-            distanceToPlayer = player.position.z - transform.position.z;
+            zDistanceToPlayer = player.position.z - transform.position.z;
             originalPos = transform.position;
+            originalDis = player.position - transform.position;
         }
+#if UNITY_EDITOR
+        [ExecuteInEditMode]
+        private void OnDrawGizmos()
+        {
+            if (!Application.isPlaying)
+            {
+                originalPos = transform.position;
+            }
+
+            Color newColor = Color.green;
+            newColor.a /= 3;
+            Gizmos.color = newColor;
+
+            //Calculate map center pos
+            Vector3 pos = originalPos;
+            pos.z = player.position.z;
+
+            //Draw
+            Gizmos.DrawCube(pos, cameraLimit);
+        }
+#endif
 
         //Methods
         void Move()
         {
-            Vector3 newPos = transform.position;
-            newPos.z = player.position.z - distanceToPlayer;
-            Vector2 fixedLimits = cameraLimit + originalPos;
-            if(Mathf.Pow(newPos.x, 2) > Mathf.Pow(fixedLimits, 2))
+            //Get current pos
+            Vector3 newPos = player.position - (Vector3)originalDis;
+
+            //Get player side
+            bool beyondX = (newPos.x > originalPos.x + originalDis.x);
+            bool beyondY = (newPos.y > originalPos.y + originalDis.y);
+
+            //Move in Z
+            newPos.z = player.position.z - zDistanceToPlayer;
+            
+            //Get camera limits
+            Vector2 fixedRadius = cameraLimit / 2 + originalPos;
+
+            //Move X within limits
+            if (Mathf.Pow(newPos.x, 2) > Mathf.Pow(fixedRadius.x, 2))
             {
-                if(newPos.x > originalPos.x)
+                if(beyondX)
                 {
-                    newPos.x = fixedLimits.x;
+                    newPos.x = fixedRadius.x;
                 }
-                else if(newPos.x < originalPos.x)
+                else
                 {
-                    newPos.x = cameraLimit.x - originalPos.x;
+                    newPos.x = originalPos.x - cameraLimit.x / 2;
                 }
             }
+
+            //Move Y within limits
+            if (Mathf.Pow(newPos.y, 2) > Mathf.Pow(fixedRadius.y, 2))
+            {
+                if (beyondY)
+                {
+                    newPos.y = fixedRadius.y;
+                }
+                else
+                {
+                    newPos.y = originalPos.y - cameraLimit.y / 2;// - originalPos.y;
+                }
+            }
+
+            //Set New pos
             transform.position = newPos;
         }
 
