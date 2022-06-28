@@ -16,10 +16,6 @@ namespace NAMESPACENAME.Gameplay.Ship
         private void Start()
         {
             usingTouch = Input.touchSupported;
-            if (useDefaultOffset)
-            {
-                screenCenterOffset = Camera.main.transform.position;
-            }
         }
         private void Update()
         {
@@ -40,7 +36,7 @@ namespace NAMESPACENAME.Gameplay.Ship
             {
                 //Get Mouse
                 Vector3 touchPos;
-                touchPos = usingTouch ? Input.GetTouch(0).position : Input.mousePosition;
+                touchPos = usingTouch ? (Vector3)Input.GetTouch(0).position : Input.mousePosition;
                 touchPos.z = Camera.main.nearClipPlane;
                 if (touchPos.z < 1)
                 {
@@ -48,7 +44,15 @@ namespace NAMESPACENAME.Gameplay.Ship
                 }
 
                 //Apply to world coordinates
-                input = (Vector2)Camera.main.ScreenToWorldPoint(touchPos) - screenCenterOffset;
+                input = Camera.main.ScreenToWorldPoint(touchPos);
+                if (useDefaultOffset)
+                {
+                    input -= (Vector2)Camera.main.transform.position;
+                }
+                else
+                {
+                    input -= ((Vector2)Camera.main.transform.position + screenCenterOffset);
+                }
             }
             else
             {
