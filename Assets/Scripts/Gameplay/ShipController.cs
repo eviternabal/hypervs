@@ -10,9 +10,9 @@ namespace NAMESPACENAME.Gameplay.Ship
         [Header("Runtime Values")]
         [SerializeField] Vector3 moveInput;
 
-
         public System.Action ShipMoved;
         public System.Action ShipAdvanced;
+        public float GetForwardSpeed { get { return forwardSpeed; } }
 
         private void Start()
         {
@@ -73,7 +73,8 @@ namespace NAMESPACENAME.Gameplay.Ship
 
         private void DecrementForwardSpeed(float value)
         {
-            forwardSpeed -= value;
+            if(forwardSpeed > 0)
+                forwardSpeed -= value;
         }
     }
 }

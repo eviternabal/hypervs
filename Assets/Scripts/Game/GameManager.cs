@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+using NAMESPACENAME.Gameplay.Ship;
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private float timeToDecrementForward;
     [SerializeField] private float decrementForwardValue;
+    [SerializeField] private ShipController shipController;
 
     static public Action<float> DecrementShipSpeed;
 
@@ -15,9 +18,12 @@ public class GameManager : MonoBehaviour
     private float timerDecrementForward;
     private bool canCountTime;
     private int score;
+    private UIManager uiManager;
 
     void Start()
     {
+        Time.timeScale = 1;
+        uiManager = FindObjectOfType<UIManager>();
         score = 0;
         Ring.CollidesWithRing += IncreasePoints;
         Ring.StartCountTimeToDecrement += SetCanCountTime;
@@ -54,7 +60,23 @@ public class GameManager : MonoBehaviour
             {
                 DecrementShipSpeed?.Invoke(decrementForwardValue);
                 timerDecrementForward = 0.0f;
+                CheckGameOver();
             }
         }
+    }
+
+    private void CheckGameOver()
+    {
+        if (shipController.GetForwardSpeed <= 0)
+        {
+            uiManager.ActiveGameOverPanel();
+            PauseGame(true);
+        }
+    }
+
+    public void PauseGame(bool pause)
+    {
+        if (pause)
+            Time.timeScale = 0;
     }
 }
