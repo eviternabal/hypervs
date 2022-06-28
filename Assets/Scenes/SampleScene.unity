@@ -171,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earnValue: 10
   earnSpeed: 20
+  isFirstRing: 0
 --- !u!64 &35530681
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -365,6 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earnValue: 10
   earnSpeed: 20
+  isFirstRing: 0
 --- !u!64 &569456511
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -586,6 +588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earnValue: 10
   earnSpeed: 10
+  isFirstRing: 0
 --- !u!64 &806247508
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -915,6 +918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earnValue: 10
   earnSpeed: 10
+  isFirstRing: 1
 --- !u!135 &1055673428
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -976,6 +980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   earnValue: 10
   earnSpeed: 20
+  isFirstRing: 0
 --- !u!64 &1140038515
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1159,7 +1164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 163337796591788688, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: forwardSpeed
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7893791656742380231, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: m_RootOrder
@@ -1256,9 +1261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b6a10827d3ded468a8d782fd22a888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDecrementForward: 20
+  timeToDecrementForward: 5
   decrementForwardValue: 5
-  score: 0
 --- !u!4 &1634489298
 Transform:
   m_ObjectHideFlags: 0
