@@ -601,7 +601,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 353311915}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 902921322}
+        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &353311915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,6 +1015,7 @@ GameObject:
   - component: {fileID: 902921318}
   - component: {fileID: 902921317}
   - component: {fileID: 902921321}
+  - component: {fileID: 902921322}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1105,6 +1118,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 1777283956}
+--- !u!114 &902921322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902921316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f1baa78691fad4c808fc72a482caf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &903511370
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,7 +1213,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 903511373}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 902921322}
+        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SampleScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &903511373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1922,7 +1959,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1492701769, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: forwardSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1492701769, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: decrementForwardValue
