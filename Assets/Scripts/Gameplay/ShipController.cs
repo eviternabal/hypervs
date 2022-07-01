@@ -12,6 +12,19 @@ namespace NAMESPACENAME.Gameplay.Ship
 
         public System.Action ShipMoved;
         public System.Action ShipAdvanced;
+        public float GetForwardSpeed { get { return forwardSpeed; } }
+
+        private void Start()
+        {
+            Ring.IncrementSpeed += IncrementForwardSpeed;
+            GameManager.DecrementShipSpeed += DecrementForwardSpeed;
+        }
+
+        private void OnDisable()
+        {
+            Ring.IncrementSpeed -= IncrementForwardSpeed;
+            GameManager.DecrementShipSpeed -= DecrementForwardSpeed;
+        }
 
         //Unity Events
         private void Update()
@@ -51,6 +64,17 @@ namespace NAMESPACENAME.Gameplay.Ship
         public void GetInputY(float input)
         {
             moveInput.y = input * XYSpeed;
+        }
+
+        private void IncrementForwardSpeed(float value)
+        {
+            forwardSpeed += value;
+        }
+
+        private void DecrementForwardSpeed(float value)
+        {
+            if(forwardSpeed > 0)
+                forwardSpeed -= value;
         }
     }
 }
