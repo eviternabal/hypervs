@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     static public Action<float> DecrementShipSpeed;
 
     public int GetScore { get { return score; } }
+    public float GetAcceleration { get { return shipController.GetForwardSpeed; } }
 
     private float timerDecrementForward;
     private bool canCountTime;
