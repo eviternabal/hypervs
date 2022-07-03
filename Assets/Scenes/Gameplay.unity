@@ -1640,6 +1640,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 1777283956}
   pausePanel: {fileID: 1731920920}
+  scoreGO: {fileID: 1632783420}
+  accelerationGO: {fileID: 1288245172}
+  pauseButton: {fileID: 1181648001}
   scoreText: {fileID: 1266735813}
   accelerationText: {fileID: 535257272}
 --- !u!114 &902921322
@@ -2232,7 +2235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 163337796591788688, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: forwardSpeed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7893791656742380231, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: m_RootOrder
@@ -3336,7 +3339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b6a10827d3ded468a8d782fd22a888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDecrementForward: 20
+  timeToDecrementForward: 5
   decrementForwardValue: 5
   shipController: {fileID: 1148733009}
 --- !u!4 &1634489298
