@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.02080056, g: 0.11207766, b: 0.115330584, a: 1}
+  m_IndirectSpecularColor: {r: 0.021147743, g: 0.11212505, b: 0.114972465, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 333244703}
   - component: {fileID: 333244702}
   m_Layer: 5
-  m_Name: Play Button text
+  m_Name: Store Button text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1529,19 +1529,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1246382145}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1446529431}
-        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Settings
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1246382145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1869,7 +1857,7 @@ GameObject:
   - component: {fileID: 1502109577}
   - component: {fileID: 1502109576}
   m_Layer: 5
-  m_Name: Play Button text
+  m_Name: Mute Button text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
