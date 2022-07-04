@@ -6,7 +6,8 @@ namespace NAMESPACENAME.Gameplay.Ship
     {
         [Header("Set Values")]
         [SerializeField] Transform player;
-        [SerializeField] Vector2 cameraLimit;
+        [SerializeField][Tooltip("x as min & y as max")] Vector2 xRange;
+        [SerializeField][Tooltip("x as min & y as max")] Vector2 yRange;
         [Header("Runtime Values")]
         [SerializeField] Vector2 originalPos;
         [SerializeField] Vector2 originalDis;
@@ -46,8 +47,16 @@ namespace NAMESPACENAME.Gameplay.Ship
             newColor.a /= 3;
             Gizmos.color = newColor;
 
+
+            //Calculate map size
+            Vector2 cameraLimit = Vector2.zero;
+            cameraLimit.x = xRange.y - xRange.x;
+            cameraLimit.y = yRange.y - yRange.x;
+
             //Calculate map center pos
-            Vector3 pos = originalPos;
+            Vector3 pos = Vector3.zero;
+            pos.x = xRange.x + cameraLimit.x / 2;
+            pos.y = yRange.x + cameraLimit.y / 2;
             pos.z = player.position.z;
 
             //Draw
@@ -60,41 +69,36 @@ namespace NAMESPACENAME.Gameplay.Ship
         {
             //Get current pos
             Vector3 newPos = player.position - (Vector3)originalDis;
-
-            //Get player side
-            bool beyondX = (newPos.x > originalPos.x + originalDis.x);
-            bool beyondY = (newPos.y > originalPos.y + originalDis.y);
-
+            
             //Move in Z
             newPos.z = player.position.z - zDistanceToPlayer;
-            
+
             //Get camera limits
-            Vector2 fixedRadius = cameraLimit / 2 + originalPos;
+            Vector2 topRightPos = Vector2.zero;
+            topRightPos += xRange.y * (Vector2)transform.right;
+            topRightPos += yRange.y * (Vector2)transform.up;
+            Vector2 bottomLeftPos = Vector2.zero;
+            bottomLeftPos += xRange.x * (Vector2)transform.right;
+            bottomLeftPos += yRange.x * (Vector2)transform.up;
 
             //Move X within limits
-            if (Mathf.Pow(newPos.x, 2) > Mathf.Pow(fixedRadius.x, 2))
+            if (newPos.x > topRightPos.x)
             {
-                if(beyondX)
-                {
-                    newPos.x = fixedRadius.x;
-                }
-                else
-                {
-                    newPos.x = originalPos.x - cameraLimit.x / 2;
-                }
+                    newPos.x = topRightPos.x;
+            }
+            else if (newPos.x < bottomLeftPos.x)
+            {
+                newPos.x = bottomLeftPos.x;
             }
 
             //Move Y within limits
-            if (Mathf.Pow(newPos.y, 2) > Mathf.Pow(fixedRadius.y, 2))
+            if (newPos.y > topRightPos.y)
             {
-                if (beyondY)
-                {
-                    newPos.y = fixedRadius.y;
-                }
-                else
-                {
-                    newPos.y = originalPos.y - cameraLimit.y / 2;// - originalPos.y;
-                }
+                newPos.y = topRightPos.y;
+            }
+            else if (newPos.y < bottomLeftPos.y)
+            {
+                newPos.y = bottomLeftPos.y;
             }
 
             //Set New pos
