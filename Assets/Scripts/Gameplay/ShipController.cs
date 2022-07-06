@@ -83,6 +83,7 @@ namespace NAMESPACENAME.Gameplay.Ship
                 forwardSpeed -= value;
         }
 
+        
         private void OnTriggerExit(Collider other)
         {
             if (other.transform.CompareTag("Obstacle"))

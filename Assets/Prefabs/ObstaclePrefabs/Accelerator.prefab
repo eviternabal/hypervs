@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earnValue: 100
-  earnSpeed: 40
+  earnSpeed: 80
   isFirstRing: 0
 --- !u!114 &8929056613599880749
 MonoBehaviour:

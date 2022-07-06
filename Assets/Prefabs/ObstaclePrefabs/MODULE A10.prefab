@@ -53,7 +53,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 1
-  size: {x: 130, y: 130, z: 1}
+  size: {x: 130, y: 130, z: 10}
   moduleID: 0
 --- !u!1 &1600776507810599460
 GameObject:
