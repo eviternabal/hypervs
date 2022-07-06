@@ -236,26 +236,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modules:
   - {fileID: 215455233202519036, guid: 5003fd444be2bc742958b2bc82fae399, type: 3}
-  - {fileID: 6871498550763334955, guid: 9e6f5d418d1a4a84f82ad4c7fa333b87, type: 3}
-  - {fileID: 5153321667119100354, guid: 29c51fc837116f442a5060f5a96cf7ee, type: 3}
-  - {fileID: 8631982260563438779, guid: b7004785ec02a3844b0853ecfcacb13e, type: 3}
-  - {fileID: 1492699353959001582, guid: 2c28d8b7859c19e419d6985718d09819, type: 3}
-  - {fileID: 1492699353959001582, guid: 8da4e6356e8cb264badec271f49e3f0e, type: 3}
-  - {fileID: 1492699353959001582, guid: e6396ec6d13613a46954fc0e2bdb9005, type: 3}
-  - {fileID: 1492699353959001582, guid: 5db090d35bdefe5459c9b50ffd97f79b, type: 3}
-  - {fileID: 1492699353959001582, guid: 2e56e44531d09664e857b57a764854b1, type: 3}
-  - {fileID: 1492699353959001582, guid: 59127e4f0937efb49b886cb5ee4052b8, type: 3}
-  - {fileID: 1492699353959001582, guid: 2d08af721e57e184584734ef42ed8a46, type: 3}
   player: {fileID: 1878715790}
-  spawnOffset: {x: 0, y: 30}
+  spawnOffset: {x: 0, y: 0}
   spawnDistance: 50
-  despawnDistance: 20
   firstSpawnTimer: 5
-  spawnTimer: 10
-  maxModules: 5
+  spawnTimer: 5
+  despawnTimer: 3
+  maxModules: 3
   currentModules: []
+  removingModules: []
   spawnPos: {x: 0, y: 0, z: 0}
   timer: 0
+  readyToSpawn: 1
 --- !u!1 &419944518
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +631,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2053464290}
     m_Modifications:
+    - target: {fileID: 1492701769, guid: 1b6e976e6021483439c41178154b2521, type: 3}
+      propertyPath: forwardSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7893791656742380231, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: m_RootOrder
       value: 1
