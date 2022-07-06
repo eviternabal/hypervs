@@ -15,11 +15,16 @@ public class ObstacleMove : MonoBehaviour
 
     [Header("Rotation")]
     [SerializeField] private bool randomRotate;
+    [SerializeField] private float randomRotateMin;
+    [SerializeField] private float randomRotateMax;
+    private float rotationSpeed;
     [SerializeField] private bool rotateClockwise;
-    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float clockwiseRotationSpeed;
+    
 
     private void Start()
     {
+        rotationSpeed = Random.Range(randomRotateMin, randomRotateMax);
         startPosition = transform.position;
     }
 
@@ -32,7 +37,7 @@ public class ObstacleMove : MonoBehaviour
 
         if (rotateClockwise)
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, 1 * Time.time * -rotationSpeed);
+            transform.rotation = Quaternion.Euler(0f, 0f, 1 * Time.time * -clockwiseRotationSpeed);
         }
 
         if (movesHorizontally)

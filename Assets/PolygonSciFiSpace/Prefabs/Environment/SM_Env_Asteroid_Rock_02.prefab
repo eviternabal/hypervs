@@ -97,6 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa109b71dbf30b47a0833ecfcd724e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movesHorizontally: 0
+  movesVertically: 0
+  amplitude: 0
+  frequency: 0
+  offset: 0
+  randomRotate: 1
+  randomRotateMin: 5
+  randomRotateMax: 20
+  rotateClockwise: 0
+  clockwiseRotationSpeed: 0
 --- !u!64 &64158074740369186
 MeshCollider:
   m_ObjectHideFlags: 0

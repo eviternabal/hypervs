@@ -135,8 +135,10 @@ MonoBehaviour:
   frequency: 0
   offset: 0
   randomRotate: 0
+  randomRotateMin: 0
+  randomRotateMax: 0
   rotateClockwise: 1
-  rotationSpeed: 300
+  clockwiseRotationSpeed: 300
 --- !u!135 &3411010274260007081
 SphereCollider:
   m_ObjectHideFlags: 0
