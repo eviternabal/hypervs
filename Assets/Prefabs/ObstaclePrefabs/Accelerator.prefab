@@ -114,8 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc4f29bdf851ec4686dda226ee2dfd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  earnValue: 10
-  earnSpeed: 0
+  earnValue: 40
+  earnSpeed: 40
   isFirstRing: 0
 --- !u!114 &8929056613599880749
 MonoBehaviour:
