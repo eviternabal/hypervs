@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.055486992, g: 0.20847136, b: 0.21481705, a: 1}
+  m_IndirectSpecularColor: {r: 0.04744482, g: 0.18338853, b: 0.19011047, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -240,26 +240,31 @@ MonoBehaviour:
   - {fileID: 5153321667119100354, guid: 29c51fc837116f442a5060f5a96cf7ee, type: 3}
   - {fileID: 8631982260563438779, guid: b7004785ec02a3844b0853ecfcacb13e, type: 3}
   - {fileID: 1492699353959001582, guid: 2c28d8b7859c19e419d6985718d09819, type: 3}
+  - {fileID: 8889478442919480249, guid: 49d1fa6653ce10b49904b7db57a1c8ea, type: 3}
+  - {fileID: 4500598476629960070, guid: 399036019e06a834fabdff4343b49b62, type: 3}
+  - {fileID: 6882035204412038818, guid: 76123ed4c3ca49d469099f851cf91b20, type: 3}
+  - {fileID: 5789559796084455790, guid: c069a538915e96944a15a98930b281c6, type: 3}
+  - {fileID: 1600776508982853698, guid: c59ee450b34608a4888f293731bd21e9, type: 3}
   - {fileID: 1492699353959001582, guid: 8da4e6356e8cb264badec271f49e3f0e, type: 3}
   - {fileID: 1492699353959001582, guid: e6396ec6d13613a46954fc0e2bdb9005, type: 3}
   - {fileID: 1492699353959001582, guid: 5db090d35bdefe5459c9b50ffd97f79b, type: 3}
   - {fileID: 1492699353959001582, guid: 8df862ea1b757bd4eb922a507f29f329, type: 3}
   - {fileID: 1492699353959001582, guid: 59127e4f0937efb49b886cb5ee4052b8, type: 3}
   - {fileID: 1492699353959001582, guid: 2d08af721e57e184584734ef42ed8a46, type: 3}
+  - {fileID: 830520062145472244, guid: 783ae8168216f96478b884241ebfaa06, type: 3}
+  - {fileID: 1694932067242683008, guid: 5cbdfa97f238a4b488c8f513c23b0980, type: 3}
+  - {fileID: 1089969365156780107, guid: fabf25dd21aa8034e918336d04248216, type: 3}
   - {fileID: 1492699353959001582, guid: 2e56e44531d09664e857b57a764854b1, type: 3}
   - {fileID: 1492699353959001582, guid: a7abe308dec074744aed76fd4b4f0ca5, type: 3}
   - {fileID: 1492699353959001582, guid: 4142846712e83b440a7dcb882ba38e60, type: 3}
   - {fileID: 1492699353959001582, guid: 6999d350566aa724d9705d3b1aa3286d, type: 3}
   - {fileID: 1492699353959001582, guid: 013ab2d1294f92643be0d68d0759a3a2, type: 3}
   - {fileID: 1492699353959001582, guid: 37b9609f8b4e57c4c86ac2f0f4a4b2c9, type: 3}
-  - {fileID: 1492699353959001582, guid: a4c28cbc05e110e40a9588004d0c29ed, type: 3}
-  - {fileID: 1694932067242683008, guid: 5cbdfa97f238a4b488c8f513c23b0980, type: 3}
-  - {fileID: 1089969365156780107, guid: fabf25dd21aa8034e918336d04248216, type: 3}
   player: {fileID: 1878715790}
   spawnOffset: {x: 0, y: 0}
-  spawnDistance: 500
+  spawnDistance: 1050
   firstSpawnTimer: 1
-  spawnTimer: 1
+  spawnTimer: 0.5
   despawnTimer: 5
   maxModules: 5
   currentModules: []
@@ -412,7 +417,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 780
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -439,7 +444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550274093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -50}
+  m_LocalPosition: {x: 0, y: 15, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -462,7 +467,7 @@ MonoBehaviour:
   player: {fileID: 1878715790}
   xRange: {x: -0.1, y: 0.1}
   yRange: {x: -25, y: 25}
-  originalPos: {x: 0, y: 0}
+  originalPos: {x: 0, y: 15}
   originalDis: {x: 0, y: 0}
   zDistanceToPlayer: 0
 --- !u!1 &671978069
@@ -10381,9 +10386,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3049968909230482407, guid: 097a65bab76897b458a90d05c728bc37, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.112
+      objectReference: {fileID: 0}
+    - target: {fileID: 3049968909230482407, guid: 097a65bab76897b458a90d05c728bc37, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3411010274260007084, guid: 097a65bab76897b458a90d05c728bc37, type: 3}
       propertyPath: m_Name
       value: Accelerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411010274260007086, guid: 097a65bab76897b458a90d05c728bc37, type: 3}
+      propertyPath: earnSpeed
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3411010274260007086, guid: 097a65bab76897b458a90d05c728bc37, type: 3}
       propertyPath: isFirstRing
@@ -10444,6 +10461,26 @@ PrefabInstance:
     - target: {fileID: 3411010274260296844, guid: 097a65bab76897b458a90d05c728bc37, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833778745220791743, guid: 097a65bab76897b458a90d05c728bc37, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833778745220791743, guid: 097a65bab76897b458a90d05c728bc37, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833778745220791743, guid: 097a65bab76897b458a90d05c728bc37, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833778745220791743, guid: 097a65bab76897b458a90d05c728bc37, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8929056613599880749, guid: 097a65bab76897b458a90d05c728bc37, type: 3}
+      propertyPath: clockwiseRotationSpeed
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 097a65bab76897b458a90d05c728bc37, type: 3}
@@ -10665,6 +10702,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2053464290}
     m_Modifications:
+    - target: {fileID: 1492701769, guid: 1b6e976e6021483439c41178154b2521, type: 3}
+      propertyPath: XYSpeed
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 1492701769, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: forwardSpeed
       value: 40
