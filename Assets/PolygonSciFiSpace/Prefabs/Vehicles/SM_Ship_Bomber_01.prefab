@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 23402512132021820}
   - component: {fileID: 64438274248165340}
   - component: {fileID: 8059223952414387372}
+  - component: {fileID: 622476222478725571}
   - component: {fileID: 8059223952414387367}
+  - component: {fileID: 2359655459649368315}
   m_Layer: 0
   m_Name: SM_Ship_Bomber_01
   m_TagString: Player
@@ -97,7 +99,7 @@ MeshCollider:
   m_GameObject: {fileID: 1029753612667854}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -116,8 +118,20 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &622476222478725571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029753612667854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff2c1d3106cc72418e66a9e96edcdad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8059223952414387367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +146,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XYSpeed: 0
   forwardSpeed: 100
+  maxForwardSpeed: 0
   moveInput: {x: 0, y: 0, z: 0}
+--- !u!65 &2359655459649368315
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029753612667854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.271142, y: 2.9281611, z: 7.732849}
+  m_Center: {x: -0.000005722046, y: 0.00000059604645, z: -3.1109314}
 --- !u!1 &4329910507921106650
 GameObject:
   m_ObjectHideFlags: 0

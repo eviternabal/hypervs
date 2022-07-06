@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.058021925, g: 0.21232021, b: 0.21847287, a: 1}
+  m_IndirectSpecularColor: {r: 0.059766278, g: 0.21411568, b: 0.22026265, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -607,6 +607,10 @@ MonoBehaviour:
   - {fileID: 1492699353959001582, guid: 6999d350566aa724d9705d3b1aa3286d, type: 3}
   - {fileID: 1492699353959001582, guid: 013ab2d1294f92643be0d68d0759a3a2, type: 3}
   - {fileID: 1492699353959001582, guid: 37b9609f8b4e57c4c86ac2f0f4a4b2c9, type: 3}
+  - {fileID: 1492699353959001582, guid: b7430e696dc4fc2418eeb99c880b9b0f, type: 3}
+  - {fileID: 1492699353959001582, guid: 8f02cffcbf2f4a249b17cf5949f9ceeb, type: 3}
+  - {fileID: 1492699353959001582, guid: e29e77ea72c4e804d9f444732091d30c, type: 3}
+  - {fileID: 1492699353959001582, guid: 57f593da53e8865469a87884bad45fd2, type: 3}
   player: {fileID: 1878715790}
   spawnOffset: {x: 0, y: 0}
   spawnDistance: 1050
@@ -981,7 +985,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Gameplay
+          m_StringArgument: Testing Ale
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &538636355
@@ -13586,7 +13590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earnValue: 100
-  earnSpeed: 60
+  earnSpeed: 100
   isFirstRing: 1
 --- !u!1 &3411010275452959547
 GameObject:
@@ -13779,6 +13783,10 @@ PrefabInstance:
       propertyPath: forwardSpeed
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 1492701769, guid: 1b6e976e6021483439c41178154b2521, type: 3}
+      propertyPath: maxForwardSpeed
+      value: 900
+      objectReference: {fileID: 0}
     - target: {fileID: 463578075762940677, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: m_Name
       value: Trail
@@ -13823,6 +13831,14 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
       value: 0.10483871
       objectReference: {fileID: 0}
+    - target: {fileID: 5558419969063206604, guid: 1b6e976e6021483439c41178154b2521, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558419969063206604, guid: 1b6e976e6021483439c41178154b2521, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5841749832568838898, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: m_Parameters.textureMode
       value: 1
@@ -13866,6 +13882,10 @@ PrefabInstance:
     - target: {fileID: 5875712120302823661, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: m_Name
       value: Trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888259139435317739, guid: 1b6e976e6021483439c41178154b2521, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7893791656742380231, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: m_RootOrder

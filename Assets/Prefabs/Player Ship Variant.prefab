@@ -67,7 +67,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 622476222478725571, guid: 79035093c9587c246b3bb29ffc5838a4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 79035093c9587c246b3bb29ffc5838a4, type: 3}
 --- !u!1 &7899312845849822713 stripped
 GameObject:
@@ -88,4 +89,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XYSpeed: 60
   forwardSpeed: 1
+  maxForwardSpeed: 0
   moveInput: {x: 0, y: 0, z: 0}

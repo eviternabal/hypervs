@@ -15,6 +15,11 @@ public class EnableParticles : MonoBehaviour
     private bool changingFov;
 
 
+    private void Start()
+    {
+        cam = Camera.main;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +34,8 @@ public class EnableParticles : MonoBehaviour
                     obj.SetActive(true);
                 }
             }
+
+
         }
     }
 
@@ -50,5 +57,7 @@ public class EnableParticles : MonoBehaviour
             changingFov = false;
         }
     }
+
+
 
 }

@@ -7,6 +7,7 @@ namespace NAMESPACENAME.Gameplay.Ship
         [Header("Set Values")]
         [SerializeField] float XYSpeed;
         [SerializeField] float forwardSpeed;
+        [SerializeField] float maxForwardSpeed;
         [Header("Runtime Values")]
         [SerializeField] Vector3 moveInput;
 
@@ -29,6 +30,7 @@ namespace NAMESPACENAME.Gameplay.Ship
         //Unity Events
         private void Update()
         {
+            ISecondCount();
             MoveForward();
 
             if (moveInput.magnitude > 0)
@@ -68,7 +70,11 @@ namespace NAMESPACENAME.Gameplay.Ship
 
         private void IncrementForwardSpeed(float value)
         {
-            forwardSpeed += value;
+            if (forwardSpeed < maxForwardSpeed)
+            {
+                forwardSpeed += value;
+            }
+            
         }
 
         private void DecrementForwardSpeed(float value)
@@ -76,5 +82,44 @@ namespace NAMESPACENAME.Gameplay.Ship
             if(forwardSpeed > 0)
                 forwardSpeed -= value;
         }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.transform.CompareTag("Obstacle"))
+            {
+                if (!hasCollided)
+                {
+                    DecrementForwardSpeed(Mathf.Ceil(forwardSpeed / 2));
+                    hasCollided = true;
+                    
+                }
+            }
+            
+        }
+        
+        private bool hasCollided = false;
+        private float maxISeconds = 2;
+        private float currentISeconds = 0;
+        private void ISecondCount()
+        {
+            if (hasCollided)
+            {
+            
+            
+                if (currentISeconds < maxISeconds)
+                {
+                    currentISeconds += Time.deltaTime; 
+                    Debug.Log(currentISeconds);
+                }
+                if (currentISeconds >= maxISeconds)
+                {
+                    hasCollided = false;
+                }
+            }
+        }
+        
+        
+ 
     }
+    
 }

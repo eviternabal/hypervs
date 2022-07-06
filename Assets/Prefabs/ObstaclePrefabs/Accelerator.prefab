@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3411010274260007087}
   - component: {fileID: 3411010274260007086}
   - component: {fileID: 8929056613599880749}
+  - component: {fileID: 2406724581575705810}
   - component: {fileID: 3411010274260007081}
   m_Layer: 0
   m_Name: Accelerator
@@ -139,6 +140,22 @@ MonoBehaviour:
   randomRotateMax: 0
   rotateClockwise: 1
   clockwiseRotationSpeed: 300
+--- !u!114 &2406724581575705810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411010274260007084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06993fb9ef166f841bb7575cfc4fe890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToEnable: []
+  cam: {fileID: 0}
+  targetFOV: 0
+  speed: 0
 --- !u!135 &3411010274260007081
 SphereCollider:
   m_ObjectHideFlags: 0
