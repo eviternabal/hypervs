@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4746414006047754}
   - component: {fileID: 33617828567553884}
   - component: {fileID: 23460781723147828}
+  - component: {fileID: 8176312537186040812}
   - component: {fileID: 64240960273468882}
   m_Layer: 0
   m_Name: SM_Env_Asteroid_Holes_02
@@ -84,6 +85,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8176312537186040812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887108158195998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa109b71dbf30b47a0833ecfcd724e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movesHorizontally: 0
+  movesVertically: 0
+  amplitude: 0
+  frequency: 0
+  offset: 0
+  randomRotate: 0
+  randomRotateMin: 0
+  randomRotateMax: 0
+  rotateClockwise: 0
+  clockwiseRotationSpeed: 0
 --- !u!64 &64240960273468882
 MeshCollider:
   m_ObjectHideFlags: 0
