@@ -36,7 +36,10 @@ namespace NAMESPACENAME.Gameplay.Modules
         [ExecuteInEditMode]
         private void OnDrawGizmos()
         {
-            Gizmos.color = Color.yellow;
+            Color newColor = Color.yellow;
+            newColor.a /= 3;
+            Gizmos.color = newColor;
+
             Gizmos.DrawCube(transform.position, size);
         }
 #endif
