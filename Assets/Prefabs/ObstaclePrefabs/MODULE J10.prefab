@@ -78,6 +78,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3643692922233969040}
+  - component: {fileID: 3273871822213519887}
   m_Layer: 0
   m_Name: MJ10A
   m_TagString: Untagged
@@ -105,6 +106,24 @@ Transform:
   m_Father: {fileID: 3643692921124654074}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3273871822213519887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3643692922233969043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e3c6b9856d0db44b3f26214457b3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  size: {x: 200, y: 200, z: 50}
+  moduleID: 0
 --- !u!1 &3643692922548083706
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +133,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3643692922548083707}
-  - component: {fileID: 3797881984823779982}
   m_Layer: 0
   m_Name: MJ10C
   m_TagString: Untagged
@@ -142,24 +160,6 @@ Transform:
   m_Father: {fileID: 3643692921124654074}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3797881984823779982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3643692922548083706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e3c6b9856d0db44b3f26214457b3c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  size: {x: 130, y: 130, z: 10}
-  moduleID: 0
 --- !u!1001 &1151807869198067665
 PrefabInstance:
   m_ObjectHideFlags: 0

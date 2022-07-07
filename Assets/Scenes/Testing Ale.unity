@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06065271, g: 0.2134783, b: 0.21969473, a: 1}
+  m_IndirectSpecularColor: {r: 0.05688545, g: 0.20994496, b: 0.21616855, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -584,36 +584,9 @@ MonoBehaviour:
   - {fileID: 215455233202519036, guid: 5003fd444be2bc742958b2bc82fae399, type: 3}
   - {fileID: 6871498550763334955, guid: 9e6f5d418d1a4a84f82ad4c7fa333b87, type: 3}
   - {fileID: 5153321667119100354, guid: 29c51fc837116f442a5060f5a96cf7ee, type: 3}
-  - {fileID: 8631982260563438779, guid: b7004785ec02a3844b0853ecfcacb13e, type: 3}
-  - {fileID: 1492699353959001582, guid: 2c28d8b7859c19e419d6985718d09819, type: 3}
-  - {fileID: 8889478442919480249, guid: 49d1fa6653ce10b49904b7db57a1c8ea, type: 3}
-  - {fileID: 4500598476629960070, guid: 399036019e06a834fabdff4343b49b62, type: 3}
-  - {fileID: 6882035204412038818, guid: 76123ed4c3ca49d469099f851cf91b20, type: 3}
-  - {fileID: 5789559796084455790, guid: c069a538915e96944a15a98930b281c6, type: 3}
-  - {fileID: 1600776508982853698, guid: c59ee450b34608a4888f293731bd21e9, type: 3}
-  - {fileID: 1492699353959001582, guid: 8da4e6356e8cb264badec271f49e3f0e, type: 3}
-  - {fileID: 1492699353959001582, guid: e6396ec6d13613a46954fc0e2bdb9005, type: 3}
-  - {fileID: 1492699353959001582, guid: 5db090d35bdefe5459c9b50ffd97f79b, type: 3}
-  - {fileID: 1492699353959001582, guid: 8df862ea1b757bd4eb922a507f29f329, type: 3}
-  - {fileID: 1492699353959001582, guid: 59127e4f0937efb49b886cb5ee4052b8, type: 3}
-  - {fileID: 1492699353959001582, guid: 2d08af721e57e184584734ef42ed8a46, type: 3}
-  - {fileID: 830520062145472244, guid: 783ae8168216f96478b884241ebfaa06, type: 3}
-  - {fileID: 1694932067242683008, guid: 5cbdfa97f238a4b488c8f513c23b0980, type: 3}
-  - {fileID: 1089969365156780107, guid: fabf25dd21aa8034e918336d04248216, type: 3}
-  - {fileID: 3643692921124654069, guid: 33eee424203570e44a1d68d13a99463f, type: 3}
-  - {fileID: 1492699353959001582, guid: 2e56e44531d09664e857b57a764854b1, type: 3}
-  - {fileID: 1492699353959001582, guid: a7abe308dec074744aed76fd4b4f0ca5, type: 3}
-  - {fileID: 1492699353959001582, guid: 4142846712e83b440a7dcb882ba38e60, type: 3}
-  - {fileID: 1492699353959001582, guid: 6999d350566aa724d9705d3b1aa3286d, type: 3}
-  - {fileID: 1492699353959001582, guid: 013ab2d1294f92643be0d68d0759a3a2, type: 3}
-  - {fileID: 1492699353959001582, guid: 37b9609f8b4e57c4c86ac2f0f4a4b2c9, type: 3}
-  - {fileID: 1492699353959001582, guid: b7430e696dc4fc2418eeb99c880b9b0f, type: 3}
-  - {fileID: 1492699353959001582, guid: 8f02cffcbf2f4a249b17cf5949f9ceeb, type: 3}
-  - {fileID: 1492699353959001582, guid: e29e77ea72c4e804d9f444732091d30c, type: 3}
-  - {fileID: 1492699353959001582, guid: 57f593da53e8865469a87884bad45fd2, type: 3}
   player: {fileID: 1878715790}
   spawnOffset: {x: 0, y: 0}
-  spawnDistance: 525
+  spawnDistance: 1100
   firstSpawnTimer: 0
   spawnTimer: 0.5
   despawnTimer: 5
@@ -12786,7 +12759,6 @@ GameObject:
   - component: {fileID: 1566598614}
   - component: {fileID: 1566598619}
   - component: {fileID: 1566598618}
-  - component: {fileID: 1566598617}
   - component: {fileID: 1566598616}
   - component: {fileID: 1566598615}
   m_Layer: 0
@@ -12840,21 +12812,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1566598617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566598613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2864a75199ad86945a2e381f3ed14acd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 50
-  rb: {fileID: 1566598615}
-  movement: {x: 0, y: 0, z: 0}
 --- !u!23 &1566598618
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13128,7 +13085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ship: {fileID: 1878715786}
   screenCenterOffset: {x: 0, y: 0}
-  useDefaultOffset: 1
+  useDefaultOffset: 0
   input: {x: 0, y: 0}
   usingTouch: 0
 --- !u!114 &1878715786 stripped
@@ -13267,9 +13224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2864a75199ad86945a2e381f3ed14acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  rb: {fileID: 0}
-  movement: {x: 0, y: 0, z: 0}
 --- !u!1 &1942018030
 GameObject:
   m_ObjectHideFlags: 0
@@ -14139,7 +14093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7893791656742380231, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7893791656742380231, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: m_LocalPosition.x
