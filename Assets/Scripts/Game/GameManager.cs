@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private float timeToDecrementForward;
     [SerializeField] private float decrementForwardValue;
+    [SerializeField] private float minAccelerationToLose;
     [SerializeField] private ShipController shipController;
 
     static public Action<float> DecrementShipSpeed;
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         StartCount();
+        CheckCanLose();
     }
 
     private void IncreasePoints(int earnValue)
@@ -65,10 +67,22 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    [SerializeField] private float minToUnlockLose;
+    private bool canLose = false;
+
+    private void CheckCanLose()
+    {
+        if (shipController.GetForwardSpeed >= minToUnlockLose)
+        {
+            canLose = true;
+        }
+    }
 
     private void CheckGameOver()
     {
-        if (shipController.GetForwardSpeed <= 0)
+
+
+        if (shipController.GetForwardSpeed <= minAccelerationToLose && canLose)
         {
             uiManager.ActiveGameOverPanel();
             PauseGame(true);

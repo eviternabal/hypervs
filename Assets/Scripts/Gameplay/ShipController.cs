@@ -15,10 +15,12 @@ namespace NAMESPACENAME.Gameplay.Ship
         public System.Action ShipAdvanced;
         public float GetForwardSpeed { get { return forwardSpeed; } }
 
+        private MeshRenderer meshRenderer;
         private void Start()
         {
             Ring.IncrementSpeed += IncrementForwardSpeed;
             GameManager.DecrementShipSpeed += DecrementForwardSpeed;
+            meshRenderer = GetComponent<MeshRenderer>();
         }
 
         private void OnDisable()
@@ -83,13 +85,15 @@ namespace NAMESPACENAME.Gameplay.Ship
                 forwardSpeed -= value;
         }
 
-        
+        [SerializeField] Material[] materials;
+
         private void OnTriggerExit(Collider other)
         {
             if (other.transform.CompareTag("Obstacle"))
             {
                 if (!hasCollided)
                 {
+                    
                     DecrementForwardSpeed(Mathf.Ceil(forwardSpeed / 2));
                     hasCollided = true;
                     
@@ -109,18 +113,18 @@ namespace NAMESPACENAME.Gameplay.Ship
             
                 if (currentISeconds < maxISeconds)
                 {
+                    meshRenderer.material = materials[1];
                     currentISeconds += Time.deltaTime; 
                     Debug.Log(currentISeconds);
                 }
                 if (currentISeconds >= maxISeconds)
                 {
+                    meshRenderer.material = materials[0];
                     hasCollided = false;
                 }
             }
         }
         
-        
- 
     }
     
 }
