@@ -6,14 +6,15 @@ public class UIMenu : MonoBehaviour
 {
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject storePanel;
-    void Start()
-    {
-        
-    }
+    [SerializeField] private List<GameObject> shipsInStore = new List<GameObject>();
 
-    void Update()
+    private void Start()
     {
-        
+        shipsInStore[0].SetActive(true);
+        for(int i = 1; i < shipsInStore.Count; i++)
+        {
+            shipsInStore[i].SetActive(false);
+        }
     }
 
     public void SwitchPanels()

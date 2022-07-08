@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.035354443, g: 0.16449696, b: 0.1698156, a: 1}
+  m_IndirectSpecularColor: {r: 0.021542033, g: 0.112816386, b: 0.11567857, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4548,6 +4548,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 122381593}
   storePanel: {fileID: 342473478}
+  shipsInStore:
+  - {fileID: 5247962731922526507}
+  - {fileID: 5057692861255989398}
+  - {fileID: 6351003637059497802}
 --- !u!54 &2814529584468047433
 Rigidbody:
   m_ObjectHideFlags: 0
