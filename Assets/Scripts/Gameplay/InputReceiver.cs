@@ -5,6 +5,7 @@ namespace NAMESPACENAME.Gameplay.Ship
     public class InputReceiver : MonoBehaviour
     {
         [Header("Set Values")]
+        [SerializeField] Joystick joystick;
         [SerializeField] ShipController ship;
         [SerializeField] Vector2 screenCenterOffset;
         [SerializeField] bool useDefaultOffset;
@@ -19,8 +20,8 @@ namespace NAMESPACENAME.Gameplay.Ship
         }
         private void Update()
         {
-            //input = joystick.Direction;
-            GetTouch();
+            input = joystick.Direction;
+            //GetTouch();
 
             ship.GetInputX(input.x);
             ship.GetInputY(input.y);
