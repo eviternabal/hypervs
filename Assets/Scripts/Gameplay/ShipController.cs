@@ -89,14 +89,15 @@ namespace NAMESPACENAME.Gameplay.Ship
 
         private void OnTriggerExit(Collider other)
         {
+            Debug.Log(other.transform.CompareTag("Obstacle"));
+
             if (other.transform.CompareTag("Obstacle"))
             {
                 if (!hasCollided)
-                {
-                    
+                {                    
                     DecrementForwardSpeed(Mathf.Ceil(forwardSpeed / 2));
                     hasCollided = true;
-                    
+                    meshRenderer.sharedMaterial = materials[1];
                 }
             }
             
@@ -108,23 +109,18 @@ namespace NAMESPACENAME.Gameplay.Ship
         private void ISecondCount()
         {
             if (hasCollided)
-            {
-            
-            
+            {                 
                 if (currentISeconds < maxISeconds)
                 {
-                    meshRenderer.material = materials[1];
                     currentISeconds += Time.deltaTime; 
-                    Debug.Log(currentISeconds);
                 }
-                if (currentISeconds >= maxISeconds)
+                else
                 {
-                    meshRenderer.material = materials[0];
+                    meshRenderer.sharedMaterial = materials[0];
                     hasCollided = false;
+                    currentISeconds = 0;
                 }
             }
-        }
-        
-    }
-    
+        }        
+    }    
 }
