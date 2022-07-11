@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.021542033, g: 0.112816386, b: 0.11567857, a: 1}
+  m_IndirectSpecularColor: {r: 0.0229421, g: 0.11806511, b: 0.12118719, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -629,7 +629,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 141172638}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2143319248}
+        m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
+        m_MethodName: OnClickBuy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &141172638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1368,7 +1380,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 341440407}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2143319248}
+        m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
+        m_MethodName: SwitchItemsInStore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &341440407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4297,6 +4321,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846926270}
   m_CullTransparentMesh: 1
+--- !u!1 &1971053949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971053951}
+  - component: {fileID: 1971053950}
+  m_Layer: 0
+  m_Name: StoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1971053950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971053949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0abe44950dd51e04ab27778cc25be75a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipsAvailable:
+  - {fileID: 5247962731922526509}
+  - {fileID: 5104775299333846149}
+  - {fileID: 6396249337741927257}
+  shipsBuyed: []
+--- !u!4 &1971053951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971053949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2127465573
 GameObject:
   m_ObjectHideFlags: 0
@@ -4628,6 +4701,8 @@ GameObject:
   - component: {fileID: 5071057748351790436}
   - component: {fileID: 5104775299333846148}
   - component: {fileID: 3020575244076294132}
+  - component: {fileID: 5104775299333846150}
+  - component: {fileID: 5104775299333846149}
   m_Layer: 0
   m_Name: Player Ship Variant 2
   m_TagString: Player
@@ -4699,6 +4774,34 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: a5870fc2456d0d54687c8967cbe4c71b, type: 3}
+--- !u!114 &5104775299333846149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5057692861255989398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e4e8e3dc2b43e4990b1f3856a06bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
+  speed: 20
+  price: 200
+--- !u!114 &5104775299333846150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5057692861255989398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0478e1c534aa0f0469342d9b9ed5c6bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAngle: 25
 --- !u!64 &5202718075730877753
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4792,6 +4895,7 @@ GameObject:
   - component: {fileID: 5202718075730877753}
   - component: {fileID: 2814529584468047433}
   - component: {fileID: 5247962731922526508}
+  - component: {fileID: 5247962731922526509}
   m_Layer: 0
   m_Name: Player Ship Variant 1
   m_TagString: Player
@@ -4812,6 +4916,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationAngle: 25
+--- !u!114 &5247962731922526509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5247962731922526507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e4e8e3dc2b43e4990b1f3856a06bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  speed: 10
+  price: 100
 --- !u!1 &6351003637059497802
 GameObject:
   m_ObjectHideFlags: 0
@@ -4825,6 +4944,8 @@ GameObject:
   - component: {fileID: 6373649911976835768}
   - component: {fileID: 6396249337741927256}
   - component: {fileID: 4033248183836837928}
+  - component: {fileID: 6396249337741927258}
+  - component: {fileID: 6396249337741927257}
   m_Layer: 0
   m_Name: Player Ship Variant 3
   m_TagString: Player
@@ -4911,3 +5032,31 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: a5870fc2456d0d54687c8967cbe4c71b, type: 3}
+--- !u!114 &6396249337741927257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351003637059497802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e4e8e3dc2b43e4990b1f3856a06bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
+  speed: 30
+  price: 350
+--- !u!114 &6396249337741927258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351003637059497802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0478e1c534aa0f0469342d9b9ed5c6bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAngle: 25

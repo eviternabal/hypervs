@@ -24,7 +24,7 @@ public class StoreManager : MonoBehaviour
 
     void Start()
     {
-
+        money = 500;
     }
 
     void Update()
@@ -34,6 +34,7 @@ public class StoreManager : MonoBehaviour
 
     public void BuyShip(int index)
     {
+        Debug.Log("El indice que llego de UIMenu es: " + index);
         if(money >= shipsAvailable[index].price)
             shipsBuyed.Add(shipsAvailable[index]);
     }
