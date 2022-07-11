@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.053971104, g: 0.20552969, b: 0.21145639, a: 1}
+  m_IndirectSpecularColor: {r: 0.054774962, g: 0.20466381, b: 0.21078065, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11756,7 +11756,7 @@ MonoBehaviour:
   timeToDecrementForward: 0.5
   decrementForwardValue: 1
   minAccelerationToLose: 50
-  pointsXAccelerationMod: 0
+  pointsXAccelerationMod: 0.5
   shipController: {fileID: 1878715786}
   minToUnlockLose: 200
 --- !u!1 &1207376897

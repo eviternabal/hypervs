@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float timeToDecrementForward;
     [SerializeField] private float decrementForwardValue;
     [SerializeField] private float minAccelerationToLose;
+    [SerializeField] private float pointsXAccelerationMod;
     [SerializeField] private ShipController shipController;
 
     static public Action<float> DecrementShipSpeed;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     public int GetScore { get { return score; } }
     public float GetAcceleration { get { return shipController.GetForwardSpeed; } }
 
+    private float originalShipSpeed;
     private float timerDecrementForward;
     private bool canCountTime;
     private int score;
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         Ring.CollidesWithRing += IncreasePoints;
         Ring.StartCountTimeToDecrement += SetCanCountTime;
+        originalShipSpeed = GetAcceleration;
     }
 
     private void OnDisable()
@@ -45,7 +48,8 @@ public class GameManager : MonoBehaviour
 
     private void IncreasePoints(int earnValue)
     {
-        score += earnValue;
+        float speedPercentage = GetAcceleration / originalShipSpeed;
+        score += earnValue * (int)(speedPercentage * pointsXAccelerationMod);
     }
 
     private void SetCanCountTime(bool value)
