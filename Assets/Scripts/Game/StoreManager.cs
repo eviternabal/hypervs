@@ -12,6 +12,7 @@ public class StoreManager : MonoBehaviour
     private int money = 0;
 
     public int GetMoney { get { return money; } }
+    public List<StoreItem> GetShipsBuyed { get { return shipsBuyed; } }
 
     private void Awake()
     {
