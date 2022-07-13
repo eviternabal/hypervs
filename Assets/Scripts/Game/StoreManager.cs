@@ -7,6 +7,7 @@ public class StoreManager : MonoBehaviour
     static public StoreManager instanceStoreManager;
     static public StoreManager Instance { get { return instanceStoreManager; } }
     [SerializeField] private List<StoreItem> shipsAvailable = new List<StoreItem>();
+    [SerializeField] private List<StoreItem> defaultShips = new List<StoreItem>();
     [SerializeField] private List<StoreItem> shipsBuyed = new List<StoreItem>();
 
     private int money = 0;
@@ -26,6 +27,12 @@ public class StoreManager : MonoBehaviour
     void Start()
     {
         money = 50000;
+
+        //Get the defeault ships
+        foreach (var ship in defaultShips)
+        {
+            BuyShip(shipsAvailable.IndexOf(ship));
+        }
     }
 
     void Update()
