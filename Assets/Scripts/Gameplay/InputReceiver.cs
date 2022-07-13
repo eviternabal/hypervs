@@ -8,6 +8,7 @@ namespace NAMESPACENAME.Gameplay.Ship
         [SerializeField] Joystick joystick;
         [SerializeField] ShipController ship;
         [SerializeField] Vector2 screenCenterOffset;
+        [SerializeField] float inputSensibility = 1;
         [SerializeField] bool useDefaultOffset;
         [Header("Runtime Values")]
         [SerializeField] Vector2 input;
@@ -20,7 +21,7 @@ namespace NAMESPACENAME.Gameplay.Ship
         }
         private void Update()
         {
-            input = joystick.Direction;
+            input = joystick.Direction * inputSensibility;
             //GetTouch();
 
             ship.GetInputX(input.x);
