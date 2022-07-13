@@ -24,9 +24,9 @@ public class UISelectShip : MonoBehaviour
         ships[index].SetActive(!ships[index].activeSelf);
     }
 
-    public void OnClickShip()
+    public void OnClickShip(string scene)
     {
-        scenesManager.LoadScene("Gameplay");
+        scenesManager.LoadScene(scene);
         //Agregar evento que le pase la nave que compro el usuario al Gameplay
     }
 }

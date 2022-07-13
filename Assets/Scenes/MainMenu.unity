@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.038644318, g: 0.1658355, b: 0.17168438, a: 1}
+  m_IndirectSpecularColor: {r: 0.058958203, g: 0.21387461, b: 0.21994534, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3088,13 +3088,13 @@ MonoBehaviour:
       - m_Target: {fileID: 659869510}
         m_TargetAssemblyTypeName: UISelectShip, Assembly-CSharp
         m_MethodName: OnClickShip
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Testing Ale
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &985823164
@@ -3434,13 +3434,13 @@ MonoBehaviour:
       - m_Target: {fileID: 659869510}
         m_TargetAssemblyTypeName: UISelectShip, Assembly-CSharp
         m_MethodName: OnClickShip
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Testing Ale
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1020029583
@@ -3968,13 +3968,13 @@ MonoBehaviour:
       - m_Target: {fileID: 659869510}
         m_TargetAssemblyTypeName: UISelectShip, Assembly-CSharp
         m_MethodName: OnClickShip
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Testing Ale
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1303258970
