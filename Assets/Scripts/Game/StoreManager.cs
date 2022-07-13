@@ -25,7 +25,7 @@ public class StoreManager : MonoBehaviour
 
     void Start()
     {
-        money = 500;
+        money = 50000;
     }
 
     void Update()
