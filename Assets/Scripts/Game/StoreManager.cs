@@ -13,6 +13,7 @@ public class StoreManager : MonoBehaviour
     private int money = 0;
 
     public int GetMoney { get { return money; } }
+    public List<StoreItem> GetDefaultShips { get { return defaultShips; } } //clean later
     public List<StoreItem> GetShipsBuyed { get { return shipsBuyed; } }
 
     private void Awake()
@@ -31,7 +32,7 @@ public class StoreManager : MonoBehaviour
         //Get the defeault ships
         foreach (var ship in defaultShips)
         {
-            BuyShip(shipsAvailable.IndexOf(ship));
+            BuyShip(GetShipIndex(ship));
         }
     }
 
@@ -46,4 +47,8 @@ public class StoreManager : MonoBehaviour
         if(money >= shipsAvailable[index].price)
             shipsBuyed.Add(shipsAvailable[index]);
     }
+    public int GetShipIndex(StoreItem ship)
+    {
+        return shipsAvailable.IndexOf(ship);
+    } //clean later(?
 }

@@ -12,6 +12,7 @@ public class UIMenu : MonoBehaviour
 
     private int indexForSwitchItems;
     private int lastIndexForSwitchItems;
+    private bool defaultShipsSetted;
 
     static public Action<int> ShowShipOnSelectShip;
 
@@ -51,6 +52,15 @@ public class UIMenu : MonoBehaviour
 
     public void OnClickPlay()
     {
+        //HARDCODEO HORRIBLE, ARREGLAR MÁS TARDE (TAMBIEN EN StoreManager)
+        if (!defaultShipsSetted)
+        {
+            StoreManager storeManager = StoreManager.instanceStoreManager;
+            foreach (var ship in storeManager.GetDefaultShips)
+            {
+                ShowShipOnSelectShip?.Invoke(storeManager.GetShipIndex(ship));
+            }
+        }
         menuPanel.SetActive(!menuPanel.activeSelf);
         selectShipPanel.SetActive(!selectShipPanel.activeSelf);
     }
