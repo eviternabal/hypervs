@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05836495, g: 0.21388915, b: 0.21991915, a: 1}
+  m_IndirectSpecularColor: {r: 0.05239608, g: 0.19783708, b: 0.20461294, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -616,8 +616,8 @@ MonoBehaviour:
   spawnDistance: 1100
   firstSpawnTimer: 0
   spawnTimer: 0.5
-  despawnTimer: 20
-  maxModules: 20
+  despawnTimer: 30
+  maxModules: 30
   currentModules: []
   removingModules: []
   spawnPos: {x: 0, y: 0, z: -167.7}
@@ -11782,7 +11782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToDecrementForward: 0.5
   decrementForwardValue: 1
-  minAccelerationToLose: 50
+  minAccelerationToLose: 100
   pointsXAccelerationMod: 0.5
   shipController: {fileID: 1878715786}
   minToUnlockLose: 200
@@ -13115,6 +13115,7 @@ MonoBehaviour:
   joystick: {fileID: 2096170900}
   ship: {fileID: 1878715786}
   screenCenterOffset: {x: 0, y: 0}
+  inputSensibility: 2
   useDefaultOffset: 0
   input: {x: 0, y: 0}
   usingTouch: 0
@@ -14148,7 +14149,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1492701769, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: XYSpeed
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1492701769, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: forwardSpeed
@@ -19091,5 +19092,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.63160586, y: 0.6112743, z: 0.054613423}
+  m_Size: {x: 1.6965078, y: 1.5833303, z: 0.054613423}
   m_Center: {x: 0, y: -0.0000007599592, z: 0}

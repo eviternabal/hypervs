@@ -91,6 +91,12 @@ public class GameManager : MonoBehaviour
             uiManager.ActiveGameOverPanel();
             PauseGame(true);
         }
+
+        if (shipController.GetForwardSpeed <= 0f)
+        {
+            uiManager.ActiveGameOverPanel();
+            PauseGame(true);
+        }
     }
 
     public void PauseGame(bool pause)
