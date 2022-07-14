@@ -28,12 +28,12 @@ public class StoreManager : MonoBehaviour
     void Start()
     {
         money = 50000;
-
+        SetDefualtShip();
         //Get the defeault ships
-        foreach (var ship in defaultShips)
-        {
-            BuyShip(GetShipIndex(ship));
-        }
+        //foreach (var ship in defaultShips)
+        //{
+        //    BuyShip(GetShipIndex(ship));
+        //}
     }
 
     void Update()
@@ -47,6 +47,12 @@ public class StoreManager : MonoBehaviour
         if(money >= shipsAvailable[index].price)
             shipsBuyed.Add(shipsAvailable[index]);
     }
+
+    public void SetDefualtShip()
+    {
+        shipsBuyed.Add(shipsAvailable[0]);
+    }
+
     public int GetShipIndex(StoreItem ship)
     {
         return shipsAvailable.IndexOf(ship);

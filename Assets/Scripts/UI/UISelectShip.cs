@@ -15,15 +15,9 @@ public class UISelectShip : MonoBehaviour
         storeManager = StoreManager.instanceStoreManager;
         scenesManager = FindObjectOfType<ScenesManager>();
         UIMenu.ShowShipOnSelectShip += ShowShipsAvailable;
-    }
-
-    private void Update()
-    {
-        //if(!selectShipPanel.activeSelf)
-        //{
-        //    for(int i = 0; i < shipsTransform.Count; i++)
-        //        shipsTransform[i].gameObject.SetActive(false);
-        //}
+        //ships[0].SetActive(!ships[0].activeSelf);
+        //shipsTransform[0].gameObject.SetActive(!shipsTransform[0].gameObject.activeSelf);
+        //Instantiate(storeManager.GetShipsBuyed[0].gameObject, shipsTransform[0].position, Quaternion.identity, shipsTransform[0]);
     }
 
     private void OnDisable()

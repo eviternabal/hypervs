@@ -45,23 +45,27 @@ public class UIMenu : MonoBehaviour
     public void OnClickBuy()
     {
         Debug.Log("lastIndexForSwitchItems: " + lastIndexForSwitchItems);
-        StoreManager.instanceStoreManager.BuyShip(lastIndexForSwitchItems);
-        ShowShipOnSelectShip?.Invoke(lastIndexForSwitchItems);
+        if(lastIndexForSwitchItems >= 1)
+        {
+            StoreManager.instanceStoreManager.BuyShip(lastIndexForSwitchItems);
+            ShowShipOnSelectShip?.Invoke(lastIndexForSwitchItems);
+        }
         Debug.Log("compro la nave: " + lastIndexForSwitchItems);
     }
 
     public void OnClickPlay()
     {
         //HARDCODEO HORRIBLE, ARREGLAR MÁS TARDE (TAMBIEN EN StoreManager)
-        if (!defaultShipsSetted)
-        {
-            StoreManager storeManager = StoreManager.instanceStoreManager;
-            foreach (var ship in storeManager.GetDefaultShips)
-            {
-                ShowShipOnSelectShip?.Invoke(storeManager.GetShipIndex(ship));
-            }
-        }
+        //if (!defaultShipsSetted)
+        //{
+        //    StoreManager storeManager = StoreManager.instanceStoreManager;
+        //    foreach (var ship in storeManager.GetDefaultShips)
+        //    {
+        //        ShowShipOnSelectShip?.Invoke(storeManager.GetShipIndex(ship));
+        //    }
+        //}
         menuPanel.SetActive(!menuPanel.activeSelf);
+        ShowShipOnSelectShip?.Invoke(0); //Mostramos en el panel de select ship la nave por defecto
         selectShipPanel.SetActive(!selectShipPanel.activeSelf);
     }
 }
