@@ -90,12 +90,14 @@ public class GameManager : MonoBehaviour
         {
             uiManager.ActiveGameOverPanel();
             PauseGame(true);
+            FindObjectOfType<AudioManager>().Play("GameOverSound");
         }
 
         if (shipController.GetForwardSpeed <= 0f)
         {
             uiManager.ActiveGameOverPanel();
             PauseGame(true);
+            FindObjectOfType<AudioManager>().Play("GameOverSound");
         }
     }
 
@@ -103,6 +105,7 @@ public class GameManager : MonoBehaviour
     {
         uiManager.ActiveGameOverPanel();
         PauseGame(true);
+        FindObjectOfType<AudioManager>().Play("GameOverSound");
     }
 
     public void PauseGame(bool pause)
