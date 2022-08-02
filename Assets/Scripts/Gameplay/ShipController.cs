@@ -16,11 +16,13 @@ namespace NAMESPACENAME.Gameplay.Ship
         public float GetForwardSpeed { get { return forwardSpeed; } }
 
         private MeshRenderer meshRenderer;
+        private GameManager gm;
         private void Start()
         {
             Ring.IncrementSpeed += IncrementForwardSpeed;
             GameManager.DecrementShipSpeed += DecrementForwardSpeed;
             meshRenderer = GetComponent<MeshRenderer>();
+            gm = GameObject.Find("Gameplay Manager").GetComponent<GameManager>();
         }
 
         private void OnDisable()
@@ -94,13 +96,41 @@ namespace NAMESPACENAME.Gameplay.Ship
             if (other.transform.CompareTag("Obstacle"))
             {
                 if (!hasCollided)
-                {                    
+                {
+                    FindObjectOfType<AudioManager>().Play("ShipHit");
                     DecrementForwardSpeed(Mathf.Ceil(forwardSpeed / 2));
+                    hitCounter++;
+                    DestroyTrail();
                     hasCollided = true;
                     meshRenderer.sharedMaterial = materials[1];
                 }
             }
             
+        }
+
+        private int hitCounter = 0;
+        [SerializeField] GameObject trail_one;
+        [SerializeField] GameObject trail_two;        
+        private void DestroyTrail()
+        {
+            switch (hitCounter)
+            {
+                
+                case 1:
+                    trail_one.gameObject.SetActive(false);
+                    Debug.Log("Golpeo 1");
+                    break;
+                case 2: 
+                    trail_two.gameObject.SetActive(false);
+                    Debug.Log("Golpeo 2");
+                    break;
+                case 3:
+                    gm.canLose = true;
+                    gm.GameOverByHits();
+                    Debug.Log("Perdes por hits");
+                    break;
+                    
+            }
         }
         
         private bool hasCollided = false;

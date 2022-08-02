@@ -29,6 +29,8 @@ public class Ring : MonoBehaviour
             CollidesWithRing?.Invoke(earnValue);
             Debug.Log("Suma velocidad");
             IncrementSpeed?.Invoke(earnSpeed);
+            FindObjectOfType<AudioManager>().Play("AcceleratorSound");
+
             if (isFirstRing)
             {
                 Debug.Log("Comienza a contar");

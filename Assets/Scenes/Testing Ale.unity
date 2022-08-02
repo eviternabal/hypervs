@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05816374, g: 0.21246174, b: 0.21859571, a: 1}
+  m_IndirectSpecularColor: {r: 0.05753351, g: 0.2111932, b: 0.21730426, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1168,6 +1168,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &679843799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5875712120302823661, guid: 1b6e976e6021483439c41178154b2521, type: 3}
+  m_PrefabInstance: {fileID: 7898284192150969456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &693215707
 GameObject:
   m_ObjectHideFlags: 0
@@ -11810,6 +11815,7 @@ MonoBehaviour:
   pointsXAccelerationMod: 0.5
   shipController: {fileID: 1878715786}
   minToUnlockLose: 200
+  canLose: 0
 --- !u!1 &1207376897
 GameObject:
   m_ObjectHideFlags: 0
@@ -13055,6 +13061,76 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7899312845849822713, guid: 1b6e976e6021483439c41178154b2521, type: 3}
   m_PrefabInstance: {fileID: 7898284192150969456}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1650659557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 463578075762940677, guid: 1b6e976e6021483439c41178154b2521, type: 3}
+  m_PrefabInstance: {fileID: 7898284192150969456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1783044605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783044607}
+  - component: {fileID: 1783044606}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1783044606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783044605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f6f56a961d7b9a4cbfb3d40ac39ff21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: AcceleratorSound
+    clip: {fileID: 8300000, guid: b351e2bedd380504a8a2722dae6927ca, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: ShipHit
+    clip: {fileID: 8300000, guid: 25d20a60ca76fbf4f8f52288df2fb6ea, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: Music
+    clip: {fileID: 8300000, guid: fbbeeba280967ee418dc834566ee9ca9, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: AmbientSound
+    clip: {fileID: 8300000, guid: be5700dcc73d76c45aa28a141b82773c, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+--- !u!4 &1783044607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783044605}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -37.83333, y: 32.749973, z: 102.42439}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1788141354
 GameObject:
   m_ObjectHideFlags: 0
@@ -14176,6 +14252,14 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1492701769, guid: 1b6e976e6021483439c41178154b2521, type: 3}
+      propertyPath: trail_one
+      value: 
+      objectReference: {fileID: 679843799}
+    - target: {fileID: 1492701769, guid: 1b6e976e6021483439c41178154b2521, type: 3}
+      propertyPath: trail_two
+      value: 
+      objectReference: {fileID: 1650659557}
+    - target: {fileID: 1492701769, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: forwardSpeed
       value: 50
       objectReference: {fileID: 0}
@@ -14294,6 +14378,10 @@ PrefabInstance:
     - target: {fileID: 5875712120302823661, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: m_Name
       value: Trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 5875712120302823661, guid: 1b6e976e6021483439c41178154b2521, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7888259139435317739, guid: 1b6e976e6021483439c41178154b2521, type: 3}
       propertyPath: m_Enabled

@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         }
     }
     [SerializeField] private float minToUnlockLose;
-    private bool canLose = false;
+    public bool canLose = false;
 
     private void CheckCanLose()
     {
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void CheckGameOver()
+    public void CheckGameOver()
     {
 
 
@@ -97,6 +97,12 @@ public class GameManager : MonoBehaviour
             uiManager.ActiveGameOverPanel();
             PauseGame(true);
         }
+    }
+
+    public void GameOverByHits()
+    {
+        uiManager.ActiveGameOverPanel();
+        PauseGame(true);
     }
 
     public void PauseGame(bool pause)
