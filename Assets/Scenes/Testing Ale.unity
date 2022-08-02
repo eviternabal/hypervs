@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05753351, g: 0.2111932, b: 0.21730426, a: 1}
+  m_IndirectSpecularColor: {r: 0.035767376, g: 0.16244248, b: 0.16775322, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12235,7 +12235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1355303018
@@ -13114,6 +13114,11 @@ MonoBehaviour:
   - name: AmbientSound
     clip: {fileID: 8300000, guid: be5700dcc73d76c45aa28a141b82773c, type: 3}
     volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: GameOverSound
+    clip: {fileID: 8300000, guid: 786c17aa241e87a4c81808a7fc891263, type: 3}
+    volume: 0.5
     pitch: 1
     source: {fileID: 0}
 --- !u!4 &1783044607
